@@ -1,7 +1,7 @@
 # Hunterologis - Personal portfolio
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/vcard-personal-portfolio)
-[![Twitter Follow](https://img.shields.io/twitter/follow/Hunterologist_?style=social)](https://twitter.com/intent/follow?screen_name=Hunterologist)
+[![Twitter Follow](https://img.shields.io/twitter/follow/Hunterologist?style=social)](https://twitter.com/intent/follow?screen_name=Hunterologist)
 
  Personal portfolio is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
 
