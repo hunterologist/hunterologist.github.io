@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blog 1</title>
+  <meta name="description" content="Discover the work of Hunterologist, a cybersecurity researcher and ethical hacker. Explore projects in web security, penetration testing, and ethical hacking.">
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+ <!--
+      - #main-content
+    -->
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+
+        <figure class="avatar-box">
+            <img src="./assets/images/sqlinjection.png" alt="sqlinjection" width="">
+        </figure>
+
+        <div class="info-content">
+            <h1 class="name" title="Macan Javaheri">Sql Injection</h1>
+            <p class="title">Blog-post</p>
+        </div>
+
+        <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+            <ul class="contacts-list">
+            <li class="contact-item">
+
+        <div class="icon-box">
+            <ion-icon name="mail-outline"></ion-icon>
+        </div>
+    </aside>
+
+
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">💥 My First Real Hack</h2>
+        </header>
+
+        <section class="about-text">
+         
+          <p>
+            When I first heard the term <strong>SQL Injection</strong>, it sounded like a hacker myth – something you'd see in movies, not real life.  
+            But curiosity took over. I had to know: <em>Can someone truly hack a login with just a few characters?</em>
+          </p>
+
+          <p>
+            I started from scratch. Nights filled with trial and error, reading articles, solving challenges, and building my own test labs.  
+            It was confusing, frustrating, but wildly exciting. I wasn’t just learning code — I was learning how attackers think.
+          </p>
+
+          <h2 style="margin-top: 2em;">🔧 Setting Up My First Test Lab</h2>
+          <p>
+            I created a simple login system using PHP and MySQL — deliberately vulnerable, no input validation. Here's what the backend looked like:
+          </p>
+
+          <pre style="background: #f4f4f4; padding: 1em; border-radius: 8px; overflow-x: auto;"><code class="language-php">
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($conn, $query);
+          </code></pre>
+
+          <p>
+            Then came the moment. I opened the login page and entered:
+          </p>
+
+          <pre style="background: #272822; color: #f8f8f2; padding: 0.8em; border-radius: 6px; display: inline-block;">' OR 1=1 --</pre>
+
+          <p>
+            Password? Left blank. I hit "Login"... and boom — I was in! 🤯  
+            That was the exact moment I realized what SQLi really means: it’s not just a bug. It’s a door — and I had just walked through it.
+          </p>
+
+          <h2 style="margin-top: 2em;">🧠 What Just Happened?</h2>
+          <p>
+            The query the server actually executed became:
+          </p>
+
+          <pre style="background: #f0f0f0; padding: 0.8em; border-left: 4px solid #007acc;"><code>SELECT * FROM users WHERE username = '' OR 1=1 --' AND password = ''</code></pre>
+
+          <p>
+            <code>--</code> comments out the rest of the query. <code>1=1</code> is always true.  
+            Result? The database returns all users, and the app logs me in without credentials.
+          </p>
+
+          <h2 style="margin-top: 2em;">🔥 Practice, Challenges & Growth</h2>
+          <p>
+            That was just the beginning. I went all-in — solving challenges on platforms like <strong>DVWA</strong>, <strong>bWAPP</strong>, and building my own local labs with Docker.  
+            I learned techniques like:
+          </p>
+
+          <ul style="padding-left: 1.2em;">
+            <li>🔗 <strong>Union-based SQLi</strong> – merging data from other tables</li>
+            <li>💣 <strong>Error-based SQLi</strong> – extracting info through error messages</li>
+            <li>🕶️ <strong>Blind SQLi</strong> – true/false logic without visible output</li>
+          </ul>
+
+          <p>
+            I practiced every day. I failed a lot. But each failure taught me something new — how to fingerprint databases, count columns, find injectable fields, and extract data.
+          </p>
+
+          <h2 style="margin-top: 2em;">🔚 What I Learned</h2>
+          <p>
+            That first hack wasn’t just about bypassing a login — it changed how I see the web.  
+            Every form, every input field... could be a potential attack surface.  
+            I now write and audit code like a hacker would attack it.
+          </p>
+
+          <blockquote style="background: #f9f9f9; padding: 1em; border-left: 4px solid #ff9800; font-style: italic;">
+            💡 <strong>New to hacking?</strong> Don’t be discouraged. Every exploit you master takes you one step deeper into understanding how the web truly works.
+          </blockquote>
+
+          <p>
+            Got questions or want to share your first hack with me? I’d love to hear from you 👇  
+            📫 <a href="mailto:hunterologist@gmail.com">hunterologist@gmail.com</a>  
+            🌐 <a href="https://hunterologist.github.io" target="_blank">hunterologist.github.io</a>
+          </p>
+         <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="/post1.html">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+    </main>
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
