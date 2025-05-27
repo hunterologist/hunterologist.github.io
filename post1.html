@@ -75,11 +75,11 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link>Home</button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button onclick="window.location.href='index.html'">Back</button>
           </li>
 
         </ul>
@@ -117,7 +117,7 @@
             I created a simple login system using PHP and MySQL — deliberately vulnerable, no input validation. Here's what the backend looked like:
           </p>
 
-          <pre style="background: #f4f4f4; padding: 1em; border-radius: 8px; overflow-x: auto;"><code class="language-php">
+          <pre style="background: #f4f4f4; padding: 1em; border-radius: 5px; overflow-x: auto; color: black; border-left: 4px solid #007acc"><code class="language-php">
         $username = $_POST['username'];
         $password = $_POST['password'];
         $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
@@ -128,7 +128,7 @@
             Then came the moment. I opened the login page and entered:
           </p>
 
-          <pre style="background: #272822; color: #f8f8f2; padding: 0.8em; border-radius: 6px; display: inline-block;">' OR 1=1 --</pre>
+          <pre style="background: #3974b3; color: #f8f8f2; padding: 0.8em; border-radius: 6px; display: inline-block;">' OR 1=1 --</pre>
 
           <p>
             Password? Left blank. I hit "Login"... and boom — I was in! 🤯  
@@ -140,7 +140,7 @@
             The query the server actually executed became:
           </p>
 
-          <pre style="background: #f0f0f0; padding: 0.8em; border-left: 4px solid #007acc;"><code>SELECT * FROM users WHERE username = '' OR 1=1 --' AND password = ''</code></pre>
+          <pre style="background: #f0f0f0; padding: 0.8em; border-left: 4px solid #007acc;"><code style="color: black;" >SELECT * FROM users WHERE username = '' OR 1=1 --' AND password = ''</code></pre>
 
           <p>
             <code>--</code> comments out the rest of the query. <code>1=1</code> is always true.  
@@ -170,199 +170,15 @@
             I now write and audit code like a hacker would attack it.
           </p>
 
-          <blockquote style="background: #f9f9f9; padding: 1em; border-left: 4px solid #ff9800; font-style: italic;">
+          <blockquote style="background: #f9f9f9; padding: 1em; border-left: 4px solid #ff9800; font-style: italic; color: black;">
             💡 <strong>New to hacking?</strong> Don’t be discouraged. Every exploit you master takes you one step deeper into understanding how the web truly works.
           </blockquote>
 
           <p>
-            Got questions or want to share your first hack with me? I’d love to hear from you 👇  
-            📫 <a href="mailto:hunterologist@gmail.com">hunterologist@gmail.com</a>  
-            🌐 <a href="https://hunterologist.github.io" target="_blank">hunterologist.github.io</a>
+            Got questions or want to share your first hack with me? I’d love to hear from you<br><br>
+            👇📫 <a href="mailto:hunterologist@gmail.com" style="color:#ff9800">hunterologist@gmail.com</a>  
           </p>
-         <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="/post1.html">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
+         
         </section>
 
       </article>
